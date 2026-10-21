@@ -4,13 +4,14 @@
 <style>
 :root{--bg:#0f1a1a;--gold:#d4af37;--cream:#f3e9cf;--teal:#1d4a47;--m-bg:#13201f;--m-fg:var(--cream);--m-accent:var(--gold);--m-border:2px solid var(--gold);--m-font:'Josefin Sans',sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--cream);font-family:'Josefin Sans',sans-serif;font-weight:300;
+img{max-width:100%}
+body{overflow-x:hidden;margin:0;background:var(--bg);color:var(--cream);font-family:'Josefin Sans',sans-serif;font-weight:300;
  background-image:repeating-linear-gradient(45deg,#ffffff06 0 2px,transparent 2px 22px),repeating-linear-gradient(-45deg,#ffffff06 0 2px,transparent 2px 22px)}
 header{text-align:center;padding:48px 16px 24px;position:relative}
 header:before,header:after{content:"";display:block;height:2px;width:min(520px,70%);margin:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 h1{font-family:'Poiret One',cursive;font-size:clamp(2.4rem,8vw,5.5rem);letter-spacing:.25em;margin:.35em 0;color:var(--gold);font-weight:400;text-transform:uppercase}
 header p{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;margin:0 0 20px}
-.layout{display:grid;grid-template-columns:230px 1fr;gap:32px;max-width:1280px;margin:auto;padding:24px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;max-width:1280px;margin:auto;padding:24px}
 aside{position:sticky;top:16px;align-self:start}
 #chips{display:flex;flex-direction:column;gap:6px}
 .chip{font:inherit;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;text-align:left;background:none;color:var(--cream);border:0;border-left:2px solid var(--teal);padding:9px 12px;cursor:pointer}
@@ -25,7 +26,9 @@ aside{position:sticky;top:16px;align-self:start}
 .card p{margin:0 4px 6px;font-size:.78rem;opacity:.75}
 footer{text-align:center;padding:30px;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7}
 footer a{color:var(--gold)}
-@media(max-width:760px){.layout{grid-template-columns:1fr;padding:14px}aside{position:static}#chips{flex-direction:row;flex-wrap:wrap}.chip{border:1px solid var(--teal)}}
+@media(max-width:1000px){.layout{grid-template-columns:180px minmax(0,1fr);gap:20px}#grid{grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}}
+@media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr);padding:14px}aside{position:static}#chips{flex-direction:row;flex-wrap:wrap}.chip{border:1px solid var(--teal);padding:10px 12px;min-height:40px}
+#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}h1{letter-spacing:.12em}header{padding-top:32px}.card h2{font-size:.7rem}}
 </style></head><body>
 <header><p>Est. 1925 · Colección de época</p><h1>Paulino</h1><p><span id="n"></span> piezas</p></header>
 <div class="layout"><aside><input id="q" type="search" placeholder="BUSCAR"><div id="chips"></div></aside><main id="grid"></main></div>

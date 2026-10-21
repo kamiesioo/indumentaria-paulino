@@ -4,7 +4,8 @@
 <style>
 :root{--mustard:#e0a526;--orange:#d9631e;--brown:#4a2c17;--avocado:#7a8a2b;--bg:#f2dfb5;--m-bg:#fbf1d6;--m-fg:var(--brown);--m-accent:var(--orange);--m-border:10px solid #fff;--m-font:'DM Sans',sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--brown);font-family:'DM Sans',sans-serif}
+img{max-width:100%}
+body{overflow-x:hidden;margin:0;background:var(--bg);color:var(--brown);font-family:'DM Sans',sans-serif}
 header{padding:36px 20px 60px;text-align:center;color:#fff3d0;background:
  radial-gradient(circle at 20% 120%,var(--avocado) 0 30%,transparent 30.5%),radial-gradient(circle at 50% 140%,var(--orange) 0 40%,transparent 40.5%),radial-gradient(circle at 80% 120%,var(--mustard) 0 32%,transparent 32.5%),var(--brown)}
 h1{font-family:'Shrikhand',cursive;font-weight:400;font-size:clamp(2.6rem,9vw,5.5rem);margin:0;color:var(--mustard);text-shadow:3px 3px 0 var(--orange),6px 6px 0 var(--avocado)}
@@ -23,6 +24,10 @@ header p{font-family:'Caveat',cursive;font-size:1.7rem;margin:6px 0 0}
 .card h2{font-family:'Caveat',cursive;font-size:1.5rem;line-height:1.05;margin:10px 2px 0;font-weight:700}
 .card p{margin:2px 2px 0;font-size:.78rem;opacity:.7}
 footer{background:var(--brown);color:#f2dfb5;text-align:center;padding:24px;font-size:.85rem}footer a{color:var(--mustard)}
+@media(max-width:900px){#grid{columns:3 200px;column-gap:20px;padding:28px 18px 56px}}
+@media(max-width:560px){#grid{columns:2;column-gap:12px;padding:22px 12px 44px}
+.card{padding:7px 7px 9px;margin-bottom:16px}.card h2{font-size:1.2rem}.card p{font-size:.7rem}
+.chip{padding:10px 12px;min-height:40px}header{padding:28px 14px 48px}.card:hover{transform:rotate(var(--r,0deg))}}
 </style></head><body>
 <header><h1>Paulino</h1><p>ropa con historia · <span id="n"></span> fotos</p></header>
 <div class="tools"><input id="q" type="search" placeholder="Buscar…"><div id="chips"></div></div>

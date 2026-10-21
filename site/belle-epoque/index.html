@@ -4,7 +4,8 @@
 <style>
 :root{--paper:#f1e6cc;--ink:#3a2a1a;--sepia:#7a5230;--rust:#8a3b1f;--m-bg:var(--paper);--m-fg:var(--ink);--m-accent:var(--rust);--m-font:'IM Fell English',Georgia,serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper) radial-gradient(ellipse at top,#f8f0dc,#e6d6b2);color:var(--ink);font-family:'IM Fell English',Georgia,serif;font-size:18px}
+img{max-width:100%}
+body{overflow-x:hidden;margin:0;background:var(--paper) radial-gradient(ellipse at top,#f8f0dc,#e6d6b2);color:var(--ink);font-family:'IM Fell English',Georgia,serif;font-size:18px}
 header{text-align:center;padding:40px 16px 20px;border-bottom:4px double var(--sepia);margin:0 24px}
 header small{letter-spacing:.4em;text-transform:uppercase;font-size:.7rem;color:var(--sepia)}
 h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.2rem,7vw,4.5rem);margin:.2em 0;letter-spacing:.04em}
@@ -25,6 +26,10 @@ nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:20px 16px
 .card p{margin:0;font-style:italic;color:var(--sepia);font-size:.9rem}
 footer{text-align:center;padding:24px;border-top:4px double var(--sepia);margin:0 24px;font-size:.8rem;color:var(--sepia)}
 footer a{color:var(--rust)}
+@media(max-width:900px){#grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px;padding:22px 20px 44px}}
+@media(max-width:560px){body{font-size:16px}header{margin:0 12px;padding:28px 8px 16px}nav{padding:14px 10px 2px}
+.chip{padding:8px 12px;min-height:38px}#grid{grid-template-columns:repeat(2,1fr);gap:16px;padding:18px 12px 36px}
+.frame{padding:6px}.card h2{font-size:.9rem}footer{margin:0 12px}}
 </style></head><body>
 <header><small>Fundada en memoria de otros tiempos</small>
 <h1>Maison <i>Paulino</i></h1><div class="orn">❦ ❦ ❦</div>

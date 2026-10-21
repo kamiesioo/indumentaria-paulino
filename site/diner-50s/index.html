@@ -4,7 +4,8 @@
 <style>
 :root{--mint:#bfe8da;--cherry:#d62839;--cream:#fff6e3;--navy:#1f3a5f;--m-bg:var(--cream);--m-fg:var(--navy);--m-accent:var(--cherry);--m-border:5px solid var(--cherry);--m-font:'Nunito',sans-serif}
 *{box-sizing:border-box}
-body{margin:0;font-family:'Nunito',sans-serif;color:var(--navy);background:var(--mint);
+img{max-width:100%}
+body{overflow-x:hidden;margin:0;font-family:'Nunito',sans-serif;color:var(--navy);background:var(--mint);
  background-image:linear-gradient(45deg,#ffffff55 25%,transparent 25% 75%,#ffffff55 75%),linear-gradient(45deg,#ffffff55 25%,transparent 25% 75%,#ffffff55 75%);background-size:60px 60px;background-position:0 0,30px 30px}
 header{background:var(--cherry);color:var(--cream);text-align:center;padding:28px 16px 40px;border-bottom:8px solid var(--navy);position:relative}
 header:after{content:"";position:absolute;left:0;right:0;bottom:-24px;height:16px;background:radial-gradient(circle at 12px 0,var(--navy) 12px,transparent 13px) 0 0/24px 16px}
@@ -25,6 +26,11 @@ header p{margin:6px 0 0;font-weight:800;letter-spacing:.1em;text-transform:upper
 .card span{display:inline-block;background:var(--cherry);color:var(--cream);font-weight:800;font-size:.75rem;padding:2px 10px;border-radius:20px}
 footer{background:var(--navy);color:var(--cream);text-align:center;padding:22px;font-size:.85rem}
 footer a{color:var(--mint)}
+@media(max-width:900px){#grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px}}
+@media(max-width:560px){.tools{padding:40px 12px 4px;gap:8px}.chip{padding:8px 12px;min-height:38px;border-width:3px;box-shadow:2px 2px 0 var(--navy)}
+#q{padding:10px 16px}#grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:16px 12px 40px}
+.card{border-width:3px;border-radius:16px;box-shadow:4px 4px 0 var(--cherry)}.card div{padding:8px 10px 10px}.card h2{font-size:.85rem}
+.card:hover{transform:none;box-shadow:4px 4px 0 var(--cherry)}header{padding:22px 12px 34px}}
 </style></head><body>
 <header><h1>Paulino's</h1><p>Moda vintage · <span id="n"></span> prendas</p></header>
 <section class="tools"><input id="q" type="search" placeholder="¿Qué buscás, cariño?"><div id="chips"></div></section>

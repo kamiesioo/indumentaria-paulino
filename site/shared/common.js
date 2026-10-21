@@ -112,7 +112,8 @@
   .v-modal-info p{margin:.4rem 0}.v-modal-info .small{font-size:.8rem;opacity:.75}
   .v-modal-info a{color:var(--m-accent,#8a3b1f)}
   .v-close{position:absolute;top:6px;right:10px;z-index:2;background:none;border:0;font-size:2rem;line-height:1;cursor:pointer;color:var(--m-accent,#8a3b1f)}
-  @media(max-width:640px){.v-modal-box{grid-template-columns:1fr}.v-modal-box img{max-height:50vh}}`;
+  @media(max-width:820px){.v-modal-box{grid-template-columns:1fr;max-width:520px}.v-modal-box img{max-height:55vh;height:auto}.v-modal-info{padding:18px}}
+  @media(max-width:480px){.v-modal{padding:8px;align-items:flex-end}.v-modal-box{max-height:94vh}.v-close{top:2px;right:6px;background:#fffc;border-radius:50%;width:38px;height:38px;font-size:1.6rem}}`;
   document.head.appendChild(st);
 
   window.Vintage = { mount, esc };

@@ -4,7 +4,8 @@
 <style>
 :root{--news:#e9e4d4;--ink:#1c1a17;--red:#b3261e;--m-bg:var(--news);--m-fg:var(--ink);--m-accent:var(--red);--m-border:2px solid var(--ink);--m-font:'Libre Baskerville',serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--news);color:var(--ink);font-family:'Libre Baskerville',serif;background-image:radial-gradient(#0000000d 1px,transparent 1px);background-size:5px 5px}
+img{max-width:100%}
+body{overflow-x:hidden;margin:0;background:var(--news);color:var(--ink);font-family:'Libre Baskerville',serif;background-image:radial-gradient(#0000000d 1px,transparent 1px);background-size:5px 5px}
 .wrap{max-width:1100px;margin:auto;padding:0 20px}
 header{text-align:center;border-bottom:6px double var(--ink);padding:26px 0 12px}
 .top{display:flex;justify-content:space-between;font-family:'Special Elite',monospace;font-size:.75rem;border-bottom:1px solid var(--ink);padding-bottom:6px;text-transform:uppercase}
@@ -24,7 +25,9 @@ nav{border-bottom:2px solid var(--ink);padding:10px 0;display:flex;flex-wrap:wra
 .card p{margin:6px 0 0;font-size:.82rem;font-style:italic}
 .card:hover h2{text-decoration:underline}
 footer{border-top:6px double var(--ink);text-align:center;padding:16px;font-family:'Special Elite',monospace;font-size:.75rem}footer a{color:var(--red)}
-@media(max-width:760px){#grid{column-count:1}.card{grid-template-columns:100px 1fr}.card img{width:100px}.top{flex-direction:column;text-align:center}}
+@media(max-width:900px){#grid{column-gap:24px}.card{grid-template-columns:110px 1fr}.card img{width:110px}}
+@media(max-width:760px){#grid{column-count:1}.card{grid-template-columns:100px 1fr}.card img{width:100px}.top{flex-direction:column;text-align:center;gap:2px}
+.wrap{padding:0 14px}nav{gap:2px 14px}.chip{padding:8px 0;min-height:36px}#q{width:100%;text-align:center;margin-bottom:6px}}
 </style></head><body><div class="wrap">
 <header><div class="top"><span>Vol. XL · Edición especial</span><span>Catálogo de moda de época</span><span><b id="n"></b> artículos</span></div>
 <h1>La Gaceta Paulino</h1><div class="sub">— Indumentaria vintage de colección —</div></header>
