@@ -1,0 +1,36 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paulino · Catálogo 1940</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--news:#e9e4d4;--ink:#1c1a17;--red:#b3261e;--m-bg:var(--news);--m-fg:var(--ink);--m-accent:var(--red);--m-border:2px solid var(--ink);--m-font:'Libre Baskerville',serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--news);color:var(--ink);font-family:'Libre Baskerville',serif;background-image:radial-gradient(#0000000d 1px,transparent 1px);background-size:5px 5px}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+header{text-align:center;border-bottom:6px double var(--ink);padding:26px 0 12px}
+.top{display:flex;justify-content:space-between;font-family:'Special Elite',monospace;font-size:.75rem;border-bottom:1px solid var(--ink);padding-bottom:6px;text-transform:uppercase}
+h1{font-family:'UnifrakturCook',cursive;font-size:clamp(2.6rem,9vw,5.6rem);margin:8px 0 0;font-weight:700}
+.sub{font-family:'Special Elite',monospace;color:var(--red);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem}
+nav{border-bottom:2px solid var(--ink);padding:10px 0;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:center}
+#q{font:inherit;border:0;border-bottom:1px solid var(--ink);background:transparent;padding:4px;width:200px;font-family:'Special Elite',monospace}
+#chips{display:contents}
+.chip{font-family:'Special Elite',monospace;text-transform:uppercase;font-size:.78rem;background:none;border:0;cursor:pointer;color:var(--ink);padding:3px 0}
+.chip.on{color:var(--red);text-decoration:underline;text-decoration-thickness:2px}.chip:hover{color:var(--red)}
+#grid{column-count:2;column-gap:36px;column-rule:1px solid var(--ink);padding:26px 0 60px}
+.card{display:grid;grid-template-columns:130px 1fr;gap:14px;break-inside:avoid;padding:0 0 18px;margin-bottom:18px;border-bottom:1px dotted var(--ink);text-decoration:none;color:inherit;cursor:pointer}
+.card img{width:130px;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.25);border:1px solid var(--ink)}
+.card:hover img{filter:grayscale(.2)}
+.card h2{font-size:1.02rem;line-height:1.2;margin:0 0 4px}
+.card .k{font-family:'Special Elite',monospace;color:var(--red);font-size:.72rem;text-transform:uppercase}
+.card p{margin:6px 0 0;font-size:.82rem;font-style:italic}
+.card:hover h2{text-decoration:underline}
+footer{border-top:6px double var(--ink);text-align:center;padding:16px;font-family:'Special Elite',monospace;font-size:.75rem}footer a{color:var(--red)}
+@media(max-width:760px){#grid{column-count:1}.card{grid-template-columns:100px 1fr}.card img{width:100px}.top{flex-direction:column;text-align:center}}
+</style></head><body><div class="wrap">
+<header><div class="top"><span>Vol. XL · Edición especial</span><span>Catálogo de moda de época</span><span><b id="n"></b> artículos</span></div>
+<h1>La Gaceta Paulino</h1><div class="sub">— Indumentaria vintage de colección —</div></header>
+<nav><input id="q" type="search" placeholder="buscar artículo…"><span id="chips"></span></nav>
+<main id="grid"></main>
+<footer>Fotos de Unsplash · crédito a cada fotógrafo en la ficha · <a href="../index.html">Otras plantillas</a></footer></div>
+<script src="../data/catalog.js"></script><script src="../shared/common.js"></script>
+<script>Vintage.mount({grid:'#grid',chips:'#chips',search:'#q',count:'#n',render:i=>`
+<a class="card" href="#" data-id="${i.id}"><img loading="lazy" src="${Vintage.esc(i.img)}" alt="${Vintage.esc(i.name)}"><div><div class="k">${Vintage.esc(i.group)}</div><h2>${Vintage.esc(i.name)}</h2><p>${Vintage.esc(i.year)}${i.culture?' · '+Vintage.esc(i.culture):''}</p></div></a>`})</script></body></html>

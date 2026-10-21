@@ -1,0 +1,33 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paulino · Setentas</title>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Caveat:wght@500;700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--mustard:#e0a526;--orange:#d9631e;--brown:#4a2c17;--avocado:#7a8a2b;--bg:#f2dfb5;--m-bg:#fbf1d6;--m-fg:var(--brown);--m-accent:var(--orange);--m-border:10px solid #fff;--m-font:'DM Sans',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--brown);font-family:'DM Sans',sans-serif}
+header{padding:36px 20px 60px;text-align:center;color:#fff3d0;background:
+ radial-gradient(circle at 20% 120%,var(--avocado) 0 30%,transparent 30.5%),radial-gradient(circle at 50% 140%,var(--orange) 0 40%,transparent 40.5%),radial-gradient(circle at 80% 120%,var(--mustard) 0 32%,transparent 32.5%),var(--brown)}
+h1{font-family:'Shrikhand',cursive;font-weight:400;font-size:clamp(2.6rem,9vw,5.5rem);margin:0;color:var(--mustard);text-shadow:3px 3px 0 var(--orange),6px 6px 0 var(--avocado)}
+header p{font-family:'Caveat',cursive;font-size:1.7rem;margin:6px 0 0}
+.tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:20px 14px 0}
+#q{border:0;border-radius:6px;padding:10px 14px;font:inherit;background:#fff8e2;box-shadow:inset 0 0 0 2px var(--brown);width:min(300px,100%)}
+#chips{display:contents}
+.chip{font:inherit;font-weight:700;border:0;border-radius:6px;background:var(--orange);color:#fff3d0;padding:9px 14px;cursor:pointer}
+.chip:nth-child(3n){background:var(--avocado)}.chip:nth-child(3n+1){background:var(--mustard);color:var(--brown)}
+.chip.on{outline:3px solid var(--brown)}.chip small{opacity:.7}
+#grid{columns:4 230px;column-gap:26px;max-width:1300px;margin:auto;padding:36px 22px 70px}
+.card{display:block;break-inside:avoid;margin:0 0 30px;background:#fff;padding:12px 12px 14px;text-decoration:none;color:inherit;box-shadow:0 6px 14px #0004;transform:rotate(var(--r,0deg));transition:.25s;cursor:pointer}
+.card:nth-child(4n+1){--r:-2.2deg}.card:nth-child(4n+2){--r:1.6deg}.card:nth-child(4n+3){--r:-1deg}.card:nth-child(4n){--r:2.4deg}
+.card:hover{transform:rotate(0) scale(1.04);z-index:2;position:relative}
+.card img{width:100%;display:block;filter:sepia(.35) saturate(1.3) contrast(.95);background:#ccc}
+.card h2{font-family:'Caveat',cursive;font-size:1.5rem;line-height:1.05;margin:10px 2px 0;font-weight:700}
+.card p{margin:2px 2px 0;font-size:.78rem;opacity:.7}
+footer{background:var(--brown);color:#f2dfb5;text-align:center;padding:24px;font-size:.85rem}footer a{color:var(--mustard)}
+</style></head><body>
+<header><h1>Paulino</h1><p>ropa con historia · <span id="n"></span> fotos</p></header>
+<div class="tools"><input id="q" type="search" placeholder="Buscar…"><div id="chips"></div></div>
+<main id="grid"></main>
+<footer>Fotos de Unsplash · crédito a cada fotógrafo en la ficha · <a href="../index.html">Otras plantillas</a></footer>
+<script src="../data/catalog.js"></script><script src="../shared/common.js"></script>
+<script>Vintage.mount({grid:'#grid',chips:'#chips',search:'#q',count:'#n',render:i=>`
+<a class="card" href="#" data-id="${i.id}"><img loading="lazy" src="${Vintage.esc(i.img)}" alt="${Vintage.esc(i.name)}"><h2>${Vintage.esc(i.name)}</h2><p>${Vintage.esc(i.year)}</p></a>`})</script></body></html>

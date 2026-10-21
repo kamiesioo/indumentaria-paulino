@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paulino's · Años 50</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--mint:#bfe8da;--cherry:#d62839;--cream:#fff6e3;--navy:#1f3a5f;--m-bg:var(--cream);--m-fg:var(--navy);--m-accent:var(--cherry);--m-border:5px solid var(--cherry);--m-font:'Nunito',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Nunito',sans-serif;color:var(--navy);background:var(--mint);
+ background-image:linear-gradient(45deg,#ffffff55 25%,transparent 25% 75%,#ffffff55 75%),linear-gradient(45deg,#ffffff55 25%,transparent 25% 75%,#ffffff55 75%);background-size:60px 60px;background-position:0 0,30px 30px}
+header{background:var(--cherry);color:var(--cream);text-align:center;padding:28px 16px 40px;border-bottom:8px solid var(--navy);position:relative}
+header:after{content:"";position:absolute;left:0;right:0;bottom:-24px;height:16px;background:radial-gradient(circle at 12px 0,var(--navy) 12px,transparent 13px) 0 0/24px 16px}
+h1{font-family:'Lobster',cursive;font-weight:400;font-size:clamp(2.6rem,9vw,5rem);margin:0;text-shadow:4px 4px 0 var(--navy);transform:rotate(-2deg)}
+header p{margin:6px 0 0;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.tools{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:44px 16px 8px;max-width:1000px;margin:auto}
+#q{flex:1 1 100%;max-width:420px;margin:0 auto 4px;border:4px solid var(--navy);border-radius:40px;padding:10px 20px;font:inherit;font-weight:700;background:var(--cream)}
+#chips{display:contents}
+.chip{font:inherit;font-weight:800;background:var(--cream);color:var(--navy);border:4px solid var(--navy);border-radius:40px;padding:6px 16px;cursor:pointer;box-shadow:3px 3px 0 var(--navy)}
+.chip.on,.chip:hover{background:var(--navy);color:var(--cream)}
+.chip small{opacity:.7}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px;max-width:1250px;margin:auto;padding:24px 20px 60px}
+.card{display:block;text-decoration:none;color:inherit;background:var(--cream);border:5px solid var(--navy);border-radius:22px;overflow:hidden;box-shadow:7px 7px 0 var(--cherry);transition:.15s;cursor:pointer}
+.card:hover{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:11px 11px 0 var(--cherry)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-bottom:5px solid var(--navy);filter:saturate(1.15)}
+.card div{padding:12px 14px 14px}
+.card h2{font-size:1rem;margin:0 0 4px;font-weight:800}
+.card span{display:inline-block;background:var(--cherry);color:var(--cream);font-weight:800;font-size:.75rem;padding:2px 10px;border-radius:20px}
+footer{background:var(--navy);color:var(--cream);text-align:center;padding:22px;font-size:.85rem}
+footer a{color:var(--mint)}
+</style></head><body>
+<header><h1>Paulino's</h1><p>Moda vintage · <span id="n"></span> prendas</p></header>
+<section class="tools"><input id="q" type="search" placeholder="¿Qué buscás, cariño?"><div id="chips"></div></section>
+<main id="grid"></main>
+<footer>Fotos de Unsplash · crédito a cada fotógrafo en la ficha · <a href="../index.html">Otras plantillas</a></footer>
+<script src="../data/catalog.js"></script><script src="../shared/common.js"></script>
+<script>Vintage.mount({grid:'#grid',chips:'#chips',search:'#q',count:'#n',render:i=>`
+<a class="card" href="#" data-id="${i.id}"><img loading="lazy" src="${Vintage.esc(i.img)}" alt="${Vintage.esc(i.name)}"><div><h2>${Vintage.esc(i.name)}</h2><span>${Vintage.esc(i.year||i.group)}</span></div></a>`})</script></body></html>

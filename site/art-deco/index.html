@@ -1,0 +1,35 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paulino · Art Déco</title>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1a1a;--gold:#d4af37;--cream:#f3e9cf;--teal:#1d4a47;--m-bg:#13201f;--m-fg:var(--cream);--m-accent:var(--gold);--m-border:2px solid var(--gold);--m-font:'Josefin Sans',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:'Josefin Sans',sans-serif;font-weight:300;
+ background-image:repeating-linear-gradient(45deg,#ffffff06 0 2px,transparent 2px 22px),repeating-linear-gradient(-45deg,#ffffff06 0 2px,transparent 2px 22px)}
+header{text-align:center;padding:48px 16px 24px;position:relative}
+header:before,header:after{content:"";display:block;height:2px;width:min(520px,70%);margin:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+h1{font-family:'Poiret One',cursive;font-size:clamp(2.4rem,8vw,5.5rem);letter-spacing:.25em;margin:.35em 0;color:var(--gold);font-weight:400;text-transform:uppercase}
+header p{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;margin:0 0 20px}
+.layout{display:grid;grid-template-columns:230px 1fr;gap:32px;max-width:1280px;margin:auto;padding:24px}
+aside{position:sticky;top:16px;align-self:start}
+#chips{display:flex;flex-direction:column;gap:6px}
+.chip{font:inherit;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;text-align:left;background:none;color:var(--cream);border:0;border-left:2px solid var(--teal);padding:9px 12px;cursor:pointer}
+.chip.on,.chip:hover{border-color:var(--gold);color:var(--gold);background:#d4af3710}
+.chip small{float:right;opacity:.6}
+#q{width:100%;margin-bottom:18px;background:none;border:1px solid var(--gold);padding:9px;color:var(--cream);font:inherit;letter-spacing:.1em}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px}
+.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--gold);padding:8px;position:relative;cursor:pointer;clip-path:polygon(0 14px,14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px));background:#0b1313}
+.card img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;filter:grayscale(.6) contrast(1.1);transition:.4s}
+.card:hover img{filter:none}
+.card h2{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:10px 4px 2px;color:var(--gold)}
+.card p{margin:0 4px 6px;font-size:.78rem;opacity:.75}
+footer{text-align:center;padding:30px;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.7}
+footer a{color:var(--gold)}
+@media(max-width:760px){.layout{grid-template-columns:1fr;padding:14px}aside{position:static}#chips{flex-direction:row;flex-wrap:wrap}.chip{border:1px solid var(--teal)}}
+</style></head><body>
+<header><p>Est. 1925 · Colección de época</p><h1>Paulino</h1><p><span id="n"></span> piezas</p></header>
+<div class="layout"><aside><input id="q" type="search" placeholder="BUSCAR"><div id="chips"></div></aside><main id="grid"></main></div>
+<footer>Fotos de Unsplash · crédito a cada fotógrafo en la ficha · <a href="../index.html">Otras plantillas</a></footer>
+<script src="../data/catalog.js"></script><script src="../shared/common.js"></script>
+<script>Vintage.mount({grid:'#grid',chips:'#chips',search:'#q',count:'#n',render:i=>`
+<a class="card" href="#" data-id="${i.id}"><img loading="lazy" src="${Vintage.esc(i.img)}" alt="${Vintage.esc(i.name)}"><h2>${Vintage.esc(i.name)}</h2><p>${Vintage.esc(i.year)}</p></a>`})</script></body></html>

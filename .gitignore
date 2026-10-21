@@ -1,0 +1,7 @@
+__pycache__/
+vintage/
+catalog_out/
+site/data/images/
+fetch_vintage.*
+build_vintage_catalog.py
+site/data/index.html

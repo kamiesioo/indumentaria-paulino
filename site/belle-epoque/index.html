@@ -1,0 +1,39 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Paulino · Belle Époque</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f1e6cc;--ink:#3a2a1a;--sepia:#7a5230;--rust:#8a3b1f;--m-bg:var(--paper);--m-fg:var(--ink);--m-accent:var(--rust);--m-font:'IM Fell English',Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper) radial-gradient(ellipse at top,#f8f0dc,#e6d6b2);color:var(--ink);font-family:'IM Fell English',Georgia,serif;font-size:18px}
+header{text-align:center;padding:40px 16px 20px;border-bottom:4px double var(--sepia);margin:0 24px}
+header small{letter-spacing:.4em;text-transform:uppercase;font-size:.7rem;color:var(--sepia)}
+h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.2rem,7vw,4.5rem);margin:.2em 0;letter-spacing:.04em}
+h1 i{font-weight:500;color:var(--rust)}
+.orn{color:var(--sepia);letter-spacing:.6em}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:20px 16px 4px}
+.chip{font:inherit;background:transparent;border:1px solid var(--sepia);color:var(--sepia);padding:5px 14px;cursor:pointer;font-style:italic}
+.chip.on,.chip:hover{background:var(--sepia);color:var(--paper)}
+.chip small{opacity:.7}
+.bar{text-align:center;padding:10px}
+.bar input{font:inherit;padding:6px 12px;border:0;border-bottom:1px solid var(--sepia);background:transparent;width:min(320px,90%);text-align:center}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:34px;padding:28px 32px 60px;max-width:1300px;margin:auto}
+.card{display:block;text-decoration:none;color:inherit;text-align:center;cursor:pointer}
+.frame{padding:12px;background:#fffaf0;border:1px solid var(--sepia);outline:1px solid var(--sepia);outline-offset:-7px;box-shadow:4px 6px 0 #0002}
+.frame img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;filter:sepia(.55) contrast(.95)}
+.card:hover img{filter:sepia(.2)}
+.card h2{font-family:'Playfair Display',serif;font-size:1.05rem;margin:14px 6px 2px;font-weight:500}
+.card p{margin:0;font-style:italic;color:var(--sepia);font-size:.9rem}
+footer{text-align:center;padding:24px;border-top:4px double var(--sepia);margin:0 24px;font-size:.8rem;color:var(--sepia)}
+footer a{color:var(--rust)}
+</style></head><body>
+<header><small>Fundada en memoria de otros tiempos</small>
+<h1>Maison <i>Paulino</i></h1><div class="orn">❦ ❦ ❦</div>
+<p><em>Indumentaria de época · <span id="n"></span> piezas de colección</em></p></header>
+<nav id="chips"></nav>
+<div class="bar"><input id="q" type="search" placeholder="Buscar en el catálogo…"></div>
+<main id="grid"></main>
+<footer>Fotos de Unsplash · crédito a cada fotógrafo en la ficha · <a href="../index.html">Otras plantillas</a></footer>
+<script src="../data/catalog.js"></script><script src="../shared/common.js"></script>
+<script>Vintage.mount({grid:'#grid',chips:'#chips',search:'#q',count:'#n',render:i=>`
+<a class="card" href="#" data-id="${i.id}"><div class="frame"><img loading="lazy" src="${Vintage.esc(i.img)}" alt="${Vintage.esc(i.name)}"></div>
+<h2>${Vintage.esc(i.name)}</h2><p>${Vintage.esc(i.year)}</p></a>`})</script></body></html>
